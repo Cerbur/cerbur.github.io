@@ -1,0 +1,11 @@
+---
+import { siteConfig, repositoryUrl } from "../config/site";
+---
+
+<footer class="site-footer shell">
+  <p>
+    © {new Date().getUTCFullYear()} {siteConfig.name}{" "}
+    <span class="footer-note">/ {siteConfig.footer.note}</span>
+  </p>
+  <a href={repositoryUrl}>{siteConfig.footer.sourceLabel} ↗</a>
+</footer>

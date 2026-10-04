@@ -1,0 +1,37 @@
+---
+import { siteConfig } from "../../config/site";
+import Arrow from "../ui/Arrow.astro";
+---
+
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow accent">{siteConfig.hero.eyebrow}</p>
+    <h1 id="hero-title">
+      <span class="hero-intro">{siteConfig.hero.introduction}</span>
+      <br />
+      <span class="accent">{siteConfig.name}</span>
+      <span class="accent" aria-hidden="true">
+        .
+      </span>
+    </h1>
+    <p class="hero-summary">{siteConfig.hero.summary}</p>
+    <div class="flex flex-wrap gap-4 mt-8">
+      <a href="#projects" class="button button-primary">
+        {siteConfig.hero.projectsLabel}
+        <Arrow />
+      </a>
+      <a href={siteConfig.social.github} class="button button-outline">
+        {siteConfig.hero.githubLabel}
+        <Arrow />
+      </a>
+    </div>
+    <p class="hero-note eyebrow">{siteConfig.hero.note}</p>
+  </div>
+  <div class="hero-mark" aria-hidden="true">
+    <div class="mark-grid"></div>
+    <span class="mark-bracket mark-left">{String.raw`{`}</span>
+    <span class="mark-letter">{siteConfig.name.charAt(0)}</span>
+    <span class="mark-bracket mark-right">{String.raw`}`}</span>
+    <span class="mark-caption">{siteConfig.name.toUpperCase()} / HOME</span>
+  </div>
+</section>

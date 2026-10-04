@@ -1,0 +1,40 @@
+---
+import { siteConfig } from "../../config/site";
+import Section from "../ui/Section.astro";
+import Arrow from "../ui/Arrow.astro";
+const content = siteConfig.contact;
+---
+
+<Section id="contact" title={content.title} number="06">
+  <h3 class="contact-title">{content.heading}</h3>
+  <p class="muted mt-4">{content.description}</p>
+  <div class="flex flex-wrap gap-5 mt-6">
+    <a class="text-link" href={siteConfig.social.github}>
+      {content.githubLabel}
+      <Arrow />
+    </a>
+    {siteConfig.social.email && (
+      <a class="text-link" href={`mailto:${siteConfig.social.email}`}>
+        {content.emailLabel}
+        <Arrow />
+      </a>
+    )}
+    {siteConfig.social.linkedin && (
+      <a class="text-link" href={siteConfig.social.linkedin}>
+        {content.linkedinLabel}
+        <Arrow />
+      </a>
+    )}
+    {siteConfig.resume.url ? (
+      <a class="text-link" href={siteConfig.resume.url}>
+        {siteConfig.resume.label}
+        <Arrow />
+      </a>
+    ) : (
+      <span class="muted text-sm">{siteConfig.resume.placeholder}</span>
+    )}
+  </div>
+  {!siteConfig.social.email && (
+    <p class="muted text-sm mt-5">{content.emailPlaceholder}</p>
+  )}
+</Section>

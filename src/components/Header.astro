@@ -1,0 +1,25 @@
+---
+import { siteConfig } from "../config/site";
+---
+
+<header class="site-header shell">
+  <a class="wordmark" href="/" aria-label={`${siteConfig.name} home`}>
+    <span class="accent" aria-hidden="true">
+      [
+    </span>
+    {siteConfig.name}
+    <span class="accent" aria-hidden="true">
+      ]
+    </span>
+    <span class="wordmark-dot" aria-hidden="true"></span>
+  </a>
+  <nav aria-label="Main navigation">
+    <ul class="flex flex-wrap gap-x-5 gap-y-2">
+      {siteConfig.navigation.map(({ href, label }) => (
+        <li>
+          <a href={href}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,32 @@
+{
+  "name": "cerbur-homepage",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier . --check",
+    "format": "prettier . --write",
+    "typecheck": "astro sync && tsc --noEmit",
+    "check": "astro check",
+    "validate": "npm run lint && npm run typecheck && npm run check",
+    "verify:build": "node scripts/verify-build.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.5",
+    "tailwindcss": "^4.3.3"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^5.9.3"
+  }
+}

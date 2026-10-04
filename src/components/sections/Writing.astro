@@ -1,0 +1,18 @@
+---
+import { siteConfig, blogUrl } from "../../config/site";
+import Section from "../ui/Section.astro";
+import Arrow from "../ui/Arrow.astro";
+const content = siteConfig.writing;
+---
+
+<Section id="writing" title={content.title} number="05">
+  <div class="writing-card card">
+    <span class="tag status-tag">{content.status}</span>
+    <h3 class="mt-5">{content.heading}</h3>
+    <p class="muted mt-3">{content.description}</p>
+    <a class="text-link mt-6" href={blogUrl}>
+      {content.label}
+      <Arrow />
+    </a>
+  </div>
+</Section>

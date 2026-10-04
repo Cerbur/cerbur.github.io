@@ -1,0 +1,12 @@
+---
+import { siteConfig } from "../../config/site";
+import Section from "../ui/Section.astro";
+---
+
+<Section id="about" title={siteConfig.about.title} number="01">
+  <div class="space-y-5 prose-copy">
+    {siteConfig.about.paragraphs.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </div>
+</Section>

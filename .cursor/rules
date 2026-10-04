@@ -1,0 +1,13 @@
+# Cursor agent rules
+
+Follow AGENTS.md as the canonical guide and read DESIGN_SYSTEM.md before UI changes.
+
+Retain these starter conventions:
+- TypeScript for configuration; declarative, focused Astro components.
+- Semantic HTML, reusable components, consistent responsive spacing.
+- Content changes belong in src/config/site.ts.
+- Check configuration changes before adding components or dependencies.
+- Prefer native static implementations; avoid unnecessary abstraction and React.
+- Empty optional data must render honestly without broken social/resume links.
+
+Run npm run validate, npm run build, and npm run verify:build after modifications.

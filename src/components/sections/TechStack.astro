@@ -1,0 +1,15 @@
+---
+import { siteConfig } from "../../config/site";
+import Section from "../ui/Section.astro";
+const content = siteConfig.sections.stack;
+---
+
+<Section id="stack" title={content.title} number="04">
+  <p class="prose-copy">{content.description}</p>
+  <ul class="flex flex-wrap gap-3 mt-6" aria-label="Website technologies">
+    {content.items.map((skill) => (
+      <li class="tag">{skill}</li>
+    ))}
+  </ul>
+  <p class="muted text-sm mt-5">{content.placeholder}</p>
+</Section>
