@@ -27,11 +27,15 @@ import Arrow from "../ui/Arrow.astro";
     </div>
     <p class="hero-note eyebrow">{siteConfig.hero.note}</p>
   </div>
-  <div class="hero-mark" aria-hidden="true">
-    <div class="mark-grid"></div>
-    <span class="mark-bracket mark-left">{String.raw`{`}</span>
-    <span class="mark-letter">{siteConfig.name.charAt(0)}</span>
-    <span class="mark-bracket mark-right">{String.raw`}`}</span>
-    <span class="mark-caption">{siteConfig.name.toUpperCase()} / HOME</span>
+  <div class="hero-portrait">
+    <img
+      src={siteConfig.avatar.src}
+      alt={siteConfig.avatar.alt}
+      width={siteConfig.avatar.width}
+      height={siteConfig.avatar.height}
+      class="hero-avatar"
+      loading="eager"
+      decoding="async"
+    />
   </div>
 </section>

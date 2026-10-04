@@ -39,6 +39,8 @@ npm run preview       # Serve the production build locally
 
 Social email and LinkedIn URLs are nullable. Populate them to show those links. Set `resume.url` to a real deployed URL (for example `/resume.pdf`, with the file added to `public/`) to show a resume link. Until then, contact/resume placeholders remain plain text.
 
+The homepage portrait and favicon use a local snapshot of the GitHub avatar, stored in `public/images/github-avatar.png` and `public/favicon.png`. `public/favicon-avatar.svg` embeds the 64px PNG inside a circular clip with transparent corners, so it makes no external image request. Their paths, avatar alt text/dimensions, and favicon metadata live in `siteConfig.avatar` and `siteConfig.favicon`. To refresh them after changing your GitHub avatar, download the current image from the profile’s GitHub API `avatar_url` (use `s=64` for the favicon), replace those assets and refresh the embedded PNG in `public/favicon-avatar.svg`, then verify their formats/dimensions before deploying. They do not sync automatically or require a GitHub request from visitors.
+
 ## Add a project
 
 Publish the project’s landing page from its **own repository** first, then add an item to `siteConfig.projects`:

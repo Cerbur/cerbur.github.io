@@ -20,6 +20,8 @@ export interface SiteConfig {
   url: string;
   language: string;
   accentColor: string;
+  avatar: { src: string; alt: string; width: number; height: number };
+  favicon: { src: string; type: string; size: string };
   social: { github: string; email: string | null; linkedin: string | null };
   resume: { url: string | null; label: string; placeholder: string };
   navigation: { label: string; href: string }[];
@@ -79,6 +81,13 @@ export const siteConfig: SiteConfig = {
   url: "https://cerbur.github.io/",
   language: "en",
   accentColor: "#185c44",
+  avatar: {
+    src: "/images/github-avatar.png",
+    alt: "cerbur’s GitHub avatar",
+    width: 460,
+    height: 460,
+  },
+  favicon: { src: "/favicon-avatar.svg", type: "image/svg+xml", size: "any" },
   social: {
     github: "https://github.com/cerbur",
     email: null,
